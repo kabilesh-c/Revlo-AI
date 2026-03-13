@@ -1,0 +1,134 @@
+No problem — let’s simplify everything **very clearly**.
+
+You want a **Windows application** that works similar to your **Android cyberbullying detection app**.
+You want it **working for a hackathon**, with **real-time monitoring**, **alerts**, and **a dashboard**.
+
+Here is the plan explained in **super simple terms**:
+
+---
+
+# ✅ SIMPLE VERSION — What we are going to build
+
+You will create **two small programs** that work together:
+
+---
+
+## **1️⃣ BACKGROUND APP (runs silently on Windows)**
+
+**What it does:**
+
+* Runs in the background.
+* Looks at what the user is typing or reading (like messages in apps, websites, Notepad, etc.).
+* Sends the text to the main app for analysis.
+
+**Technology:** C# (very easy on Windows).
+This program is like the “Android background monitor” but for Windows.
+
+---
+
+## **2️⃣ MAIN APP (the visible dashboard)**
+
+**What it does:**
+
+* Shows alerts when bullying text is detected.
+* Displays a list of all incidents.
+* Shows safe replies or help options.
+* Lets you export reports.
+
+**Technology:** Electron = a simple way to make desktop apps using **HTML + CSS + JavaScript**
+(so it feels like making a website but runs as a real Windows app).
+
+Electron = “a browser window packaged as an app” → perfect for hackathons because it's fast.
+
+---
+
+# 🔄 How they work together
+
+### Step 1: Background app captures text
+
+→ Example: user types “you are so stupid” in any app.
+
+### Step 2: Background app sends this text to the main app
+
+→ Like sending a message: “Hey, this is what the user just typed.”
+
+### Step 3: Main app analyzes the message
+
+* Is it rude?
+* Is it bullying?
+* Does it sound threatening?
+
+### Step 4: If bullying is detected
+
+✔ Show a Windows notification
+✔ Add the event to the dashboard
+✔ Suggest safe reply / resources
+
+---
+
+# 🧠 Why 2 apps?
+
+Because:
+
+### Background app
+
+* Needs permission to read screen text
+* Needs to run even if the dashboard is closed
+* Needs to be lightweight
+
+### Main dashboard
+
+* Needs to show UI
+* Needs to analyze and display results
+* Should not run CPU-heavy monitoring tasks
+
+This separation makes it work better and makes it easier to build quickly.
+
+---
+
+# 🧒 Very Simple Analogy
+
+Think of your system like this:
+
+| Role                                   | What it does             |
+| -------------------------------------- | ------------------------ |
+| **Background app = “security camera”** | Watches what's happening |
+| **Main app = “monitor screen”**        | Shows alerts to the user |
+
+---
+
+# ❓Why Electron for the UI?
+
+Because:
+
+✔ You already know JavaScript from React Native
+✔ Electron lets you build a desktop app using web skills
+✔ Very fast to build UI
+✔ Works on any Windows laptop without complicated coding
+
+It is basically:
+**A desktop app built like a website** — perfect for hackathon demos.
+
+---
+
+# ⭐ What the final result looks like
+
+When you demo this at the hackathon:
+
+* A Windows program runs in the background
+* When cyberbullying text appears anywhere
+* Your dashboard pops a notification
+* Shows the incident
+* Lets the user take action
+* Looks polished
+* Works for most apps that show text
+
+This is enough to impress judges because it demonstrates:
+
+✔ Cross-platform protection
+✔ Real-time AI detection
+✔ Privacy-friendly (local processing)
+✔ Meaningful social impact
+
+---
+
