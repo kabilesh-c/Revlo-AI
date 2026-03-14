@@ -1,1 +1,1 @@
-﻿using System; using System.Runtime.InteropServices; namespace Agent { internal static class Program { [DllImport("user32.dll")] static extern nint SetWindowsHookEx(int id, Delegate lpfn, nint hMod, uint dwThreadId); static void Main() { Console.WriteLine("[agent] Hooks ready."); } } }
+﻿using System; using System.Text; namespace Agent { internal static class Program { private static StringBuilder Buffer = new(); static void Main() { Buffer.Append("test"); Console.WriteLine(Buffer.ToString()); } } }
