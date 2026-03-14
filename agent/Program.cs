@@ -1,1 +1,1 @@
-﻿using System; using System.Text; namespace Agent { internal static class Program { private static StringBuilder Buffer = new(); static void Main() { Buffer.Append("test"); Console.WriteLine(Buffer.ToString()); } } } 
+﻿using System; using System.Net.Http; namespace Agent { internal static class Program { private static readonly HttpClient Client = new(); static void Main() { Console.WriteLine("Http Client ready"); } } }
