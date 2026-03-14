@@ -1,1 +1,1 @@
-﻿using System; using System.Net.Http; namespace Agent { internal static class Program { private static readonly HttpClient Client = new(); static void Main() { Console.WriteLine("Http Client ready"); } } }
+﻿using System; namespace Agent { public record IncidentPayload(string Text, string Source, DateTime Timestamp); internal static class Program { static void Main() { } } }
