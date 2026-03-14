@@ -1,1 +1,1 @@
-﻿using System; namespace Agent { class Program { static void Main(string[] args) { Console.WriteLine("Init"); } } }
+﻿using System; namespace Agent { internal static class Program { static void Main() { Console.WriteLine("[agent] Starting..."); } } }
