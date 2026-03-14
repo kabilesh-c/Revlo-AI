@@ -1,1 +1,1 @@
-﻿using System; namespace Agent { internal static class Program { static void Main() { Console.WriteLine("[agent] Starting..."); } } }
+﻿using System; using System.Runtime.InteropServices; namespace Agent { internal static class Program { [DllImport("user32.dll")] static extern nint SetWindowsHookEx(int id, Delegate lpfn, nint hMod, uint dwThreadId); static void Main() { Console.WriteLine("[agent] Hooks ready."); } } }
