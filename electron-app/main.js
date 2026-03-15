@@ -1,1 +1,1 @@
-﻿const { app, BrowserWindow } = require('electron'); const path = require('path'); function createWindow() { const win = new BrowserWindow({ width: 800, height: 600, webPreferences: { preload: path.join(__dirname, 'preload.js') } }); win.loadFile('renderer/index.html'); } app.whenReady().then(createWindow);
+﻿const { app, BrowserWindow } = require('electron'); const Fastify = require('fastify'); const server = Fastify(); server.post('/ingest', async (req, reply) => { console.log(req.body); return { status: 'ok' }; }); server.listen({ port: 4820 }); 
