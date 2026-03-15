@@ -1,1 +1,76 @@
-﻿<html><body><div id='sidebar'>Menu</div><div id='content'>Dashboard</div></body></html>
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cyberbullying Watch</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="branding">
+        <span class="dot"></span>
+        <h1>Cyberbullying Watch</h1>
+      </div>
+      <div class="status">
+        <span id="status-dot" class="status-dot online"></span>
+        <span id="status-text">Monitoring (demo)</span>
+        <span id="model-status" class="model-status">Model: loading...</span>
+      </div>
+    </header>
+
+    <!-- Auth Overlay -->
+    <div id="auth-overlay" class="auth-overlay" style="display: flex;">
+      <div class="auth-card">
+        <h2>Welcome to Cyberbullying Watch</h2>
+        <p class="muted">Sign in or create an account to start monitoring</p>
+        <div id="auth-error" class="auth-error hidden"></div>
+        <form id="auth-form">
+          <input type="email" id="auth-email" placeholder="Email" required />
+          <input type="password" id="auth-password" placeholder="Password" required />
+          <div class="auth-buttons">
+            <button type="submit" id="auth-signin-btn">Sign In</button>
+            <button type="button" id="auth-signup-btn">Sign Up</button>
+          </div>
+        </form>
+        <div id="auth-user-info" class="auth-user-info hidden">
+          <p>Logged in as: <span id="auth-email-display"></span></p>
+          <button id="auth-signout-btn">Sign Out</button>
+        </div>
+      </div>
+    </div>
+
+    <main id="main-content" class="hidden">
+      <section class="card incident-summary">
+        <div>
+          <h2>Incidents</h2>
+          <p id="incident-count">0 detected</p>
+        </div>
+        <button id="test-btn">Send test incident</button>
+      </section>
+
+      <section class="card">
+        <div class="card-header">
+          <h3>Recent alerts</h3>
+        </div>
+        <div id="incident-list" class="incident-list empty">
+          <p class="muted">No incidents yet.</p>
+        </div>
+      </section>
+
+      <!-- Pending Link Requests -->
+      <section id="links-section" class="card hidden">
+        <div class="card-header">
+          <h3>Parent Link Requests</h3>
+        </div>
+        <div id="links-list" class="links-list">
+          <p class="muted">No pending requests.</p>
+        </div>
+      </section>
+    </main>
+
+    <script src="renderer.js"></script>
+  </body>
+</html>
+
+
