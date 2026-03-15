@@ -1,1 +1,1 @@
-﻿const { app, BrowserWindow } = require('electron'); const Fastify = require('fastify'); const server = Fastify(); server.post('/ingest', async (req, reply) => { console.log(req.body); return { status: 'ok' }; }); server.listen({ port: 4820 }); 
+﻿const { app, ipcMain } = require('electron'); ipcMain.handle('ping', () => 'pong');
